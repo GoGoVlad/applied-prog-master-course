@@ -10,7 +10,7 @@ public class Main {
         Class1 c1 = new Class1();
         c1.setId(5);
         c1.setName("test");
-        AbstractWriter aw;
+        FactoryWriter aw;
         aw = getWriter("excel");
         aw.write(c1);
         aw = getWriter("json");
@@ -18,7 +18,7 @@ public class Main {
         aw = getWriter("txt");
         aw.write(c1);
     }
-    private static AbstractWriter getWriter(String fType) {
+    private static FactoryWriter getWriter(String fType) {
         AbstractWriter writer = null;
         switch (fType) {
             case "excel":
